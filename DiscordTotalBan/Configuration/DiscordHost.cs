@@ -4,6 +4,7 @@ using Discord;
 using Discord.Addons.Hosting;
 using Discord.Commands;
 using Discord.WebSocket;
+using DiscordTotalBan.Utils;
 using Microsoft.Extensions.Hosting;
 
 namespace DiscordTotalBan.Configuration;
@@ -20,7 +21,7 @@ public static class DiscordHost
                 AlwaysDownloadUsers = true,
                 MessageCacheSize = 200
             };
-            config.Token = context.Configuration["Token"];
+            config.Token = DiscordTokenReader.GetToken();
         })
         .UseCommandService((_, config) =>
         {
