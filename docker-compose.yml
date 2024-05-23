@@ -1,0 +1,6 @@
+﻿services:
+  discordtotalban:
+    image: discordtotalban
+    build:
+      context: .
+      dockerfile: DiscordTotalBan/Dockerfile
