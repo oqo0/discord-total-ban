@@ -32,9 +32,9 @@ public static class DiscordHost
             config.LogLevel = LogSeverity.Info;
             config.UseCompiledLambda = true;
         })
-        .ConfigureServices((context, services) =>
+        .ConfigureServices((_, services) =>
         {
-            services.AddInteractionHandler();
+            services.AddServices();
         });
         
         return hostBuilder;
